@@ -54,6 +54,7 @@ public class HoaDonController {
     public String List(Model  model){
         List<HoaDon> listhd =  hoaDonRepository.findAll();
 
+
         model.addAttribute("listHD", listhd);
         return "HoaDon/index";
     }
