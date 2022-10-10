@@ -56,6 +56,7 @@ public class HoaDonController {
 
 
         model.addAttribute("listHD", listhd);
+        
         return "HoaDon/index";
     }
     @GetMapping("/listHDKH")
