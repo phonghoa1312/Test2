@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a  th:href="@{/KhachHang/create}" >Create </a><br>
+<a  th:href="@{/HDKH}" > Hoa Don Khach Hang </a>
+
+<br>
+<form>
+    <table >
+        <tr>
+            <th>| ID |</th>
+            <th> Ma NV |</th>
+            <th> Ten NV |</th>
+            <th> Ngay Sinh |</th>
+
+            <th> SDT |</th>
+            <th> Dia Chi |</th>
+            <th> Thanh Pho |</th>
+            <th> Quoc Gia |</th>
+            <th> Mat Khau |</th>
+
+            <hr>
+        </tr>
+
+        <tr th:each="listKH : ${listKH}">
+
+            <td th:text="${listKH.id}"></td>
+            <td th:text="${listKH.maKH}"></td>
+            <td th:text="${listKH.ho}+ ' ' +${listKH.tenDem}+ ' ' +${listKH.tenKH}"></td>
+            <td th:text="${listKH.ngaySinh}"></td>
+            <td th:text="${listKH.sdt}"></td>
+            <td th:text="${listKH.diaChi}"></td>
+            <td th:text="${listKH.thanhPho}"></td>
+            <td th:text="${listKH.quocGia}"></td>
+            <td th:text="${listKH.matKhau}"></td>
+
+            <td>
+                <a type="submit" th:href="@{'/edit/'+${listKH.id}}">Update</a>
+                <a type="submit" th:href="@{'/delete/'+${listKH.id}}">Delete</a>
+            </td>
+
+            <td>
+                <br>
+                <hr>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

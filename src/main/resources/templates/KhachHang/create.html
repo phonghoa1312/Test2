@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="${store}" th:object="${khachhang}">
+    <input type="text" hidden th:field="*{id}" name="id">
+    Ma NV <input type="text" th:field="*{maKH}" name="maKH"><br>
+    Ho NV<input type="text" th:field="*{ho}" name="ho"><br>
+    Ten dem NV<input type="text" th:field="*{tenDem}" name="tenDem"><br>
+    Ten NV<input type="text" th:field="*{tenKH}" name="tenKH"><br>
+    Ngay Sinh<input type="text" th:field="*{ngaySinh}" name="ngaySinh"><br>
+    Dia Chi<input type="text" th:field="*{diaChi}" name="diaChi"><br>
+    SDT<input type="text" th:field="*{sdt}" name="sdt"><br>
+    Thanh pho<input type="text" th:field="*{thanhPho}" name="thanhPho"><br>
+    Quoc Gia<input type="text" th:field="*{quocGia}" name="quocGia"><br>
+    Mat Khau<input type="text" th:field="*{matKhau}" name="matKhau"><br>
+
+    <button type="submit">
+        Submit
+    </button>
+</form>
+</body>
+</html>

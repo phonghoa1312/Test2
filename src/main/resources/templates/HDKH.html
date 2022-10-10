@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a  th:href="@{/HoaDon/index}" >Hoa Don </a> <br>
+<a  th:href="@{/KhachHang/index}" >Khach Hang </a>
+<br>
+<form>
+    <table >
+        <tr>
+            <th>| ID HD|</th>
+            <th> Ma HD |</th>
+            <th> Tinh trang |</th>
+            <th> Ten Nguoi Nhan |</th>
+
+            <th> Ten Khach Hang |</th>
+            <th> SDT |</th>
+            <th> Dia Chi |</th>
+
+
+            <hr>
+        </tr>
+
+        <tr th:each="listHD : ${listHD} " >
+
+            <td th:text="${listHD.id}"></td>
+
+            <td th:text="${listHD.maHD}"></td>
+            <td>
+                <a th:if="${listHD.tinhTrang } =='1'">Đa Nhan hang | </a>
+                <a th:if="${listHD.tinhTrang } =='0'" >Chua nhan hang | </a>
+            </td>
+            <td th:text="${listHD.tenNguoiNhan}"></td>
+
+            <td th:each="listKH : ${listKH}" th:if = "${listHD.idKH} == ${listKH.id}"
+                th:text="${listKH.ho}+ ' ' +${listKH.tenDem}+ ' ' +${listKH.tenKH}">
+            </td>
+            <td th:each="listKH : ${listKH}" th:if = "${listHD.idKH} == ${listKH.id}"  th:text="${listKH.sdt}"></td>
+            <td th:each="listKH : ${listKH}" th:if = "${listHD.idKH} == ${listKH.id}"  th:text="${listKH.diaChi}"></td>
+
+
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a  th:href="@{/HoaDon/create}" >Create </a>
+
+<br>
+<form>
+    <table border="0" cellpadding="0">
+        <tr>
+            <th>|ID HD|</th>
+            <th>|ID KH |</th>
+            <th> Ma HD |</th>
+            <th> Ngày tạo |</th>
+            <th> Ngày thanh toán |</th>
+            <th> Ngày Ship |</th>
+            <th> Ngày Nhận |</th>
+            <th> Tình trạng |</th>
+            <th> Ten Nguoi Nhan |</th>
+            <th> Dia Chi |</th>
+            <th> SDT |</th>
+            <hr>
+        </tr>
+
+        <tr th:each="listHD : ${listHD}">
+
+            <td th:text="${listHD.id}"></td>
+            <td th:text="${listHD.idKH}"></td>
+            <td th:text="${listHD.maHD}"></td>
+            <td th:text="${listHD.ngayTao} + '|'"></td>
+            <td th:text="${listHD.ngayThanhToan}+ '|' "></td>
+            <td th:text="${listHD.ngayShip}+ '|'"></td>
+            <td th:text="${listHD.ngayNhan}+ '|'"></td>
+
+                <td>
+            <a th:if="${listHD.tinhTrang } =='1'">Đa Nhan hang | </a>
+            <a th:if="${listHD.tinhTrang } =='0'" >Chua nhan hang | </a>
+        </td>
+            </td>
+
+            <td th:text="${listHD.tenNguoiNhan}+ '|'"></td>
+            <td th:text="${listHD.diaChi}+ '|'"></td>
+            <td th:text="${listHD.sdt}+ '|'"></td>
+            <td>
+                <a type="submit" th:href="@{'/HoaDon/edit/'+${listHD.id}}">Update</a>
+                <a type="submit" th:href="@{'/HoaDon/delete/'+${listHD.id}}">Delete</a>
+            </td>
+
+            <td>
+                <br>
+                <hr>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

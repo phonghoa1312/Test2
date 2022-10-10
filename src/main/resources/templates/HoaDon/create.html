@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" th:action="${storehd}" th:object="${hoadon}" >
+    <input type="text" hidden th:field="*{id}" name="id"><br>
+   ID KH <input type="text"  th:field="*{idKH}" name="idKH"> <br>
+    Ma HD <input type="text" th:field="*{maHD}" name="maHD"><br>
+    Ngay Tao<input type="text" th:field="*{ngayTao}" name="ngayTao"><br>
+    Ngay Thanh Toan <input type="text" th:field="*{ngayThanhToan}" name="ngayThanhToan"><br>
+    Ngay Ship <input type="text" th:field="*{ngayShip}" name="ngayShip"><br>
+    Ngay Nhan <input type="text" th:field="*{ngayNhan}" name="ngayNhan"><br>
+    Tinh Trang <br>
+    <input type="radio" th:field="*{tinhTrang}"  name="tinhTrang" value="1" >Đã nhận hàng
+    <input type="radio" th:field="*{tinhTrang}" name="tinhTrang" value="0" >Chưa nhận hàng
+    <br>
+    Ten Nguoi Nhan<input type="text" th:field="*{tenNguoiNhan}" name="tenNguoiNhan"><br>
+    Dia Chi<input type="text" th:field="*{diaChi}" name="diaChi"><br>
+    SDT<input type="text" th:field="*{sdt}" name="sdt"><br>
+
+
+    <button type="submit">
+        Submit
+    </button>
+</form>
+</body>
+</html>
