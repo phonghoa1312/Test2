@@ -36,6 +36,7 @@ public class KhachHangController {
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable(name="id") int id){
         khachHangRepository.deleteById(id);
+
         return "redirect:/listKH";
     }
 
