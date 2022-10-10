@@ -39,6 +39,7 @@ public class KhachHangController {
         return "redirect:/listKH";
     }
 
+
     @PostMapping("/store")
     public String store(
             @ModelAttribute("khachhang") KhachHang x) {
